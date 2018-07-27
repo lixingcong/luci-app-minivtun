@@ -1,0 +1,16 @@
+
+config general 'general'
+	list server 'nil'
+	option daemon_user 'root'
+
+config servers 'default'
+	option server_addr '127.0.0.1'
+	option server_port '1414'
+	option password 'password'
+	option local_family 'IPv4'
+	option local_ipaddr4 '10.7.0.2/24'
+	option local_ipaddr6 'fc00::2/64'
+	option mtu '1400'
+	option keepalive '20'
+	option intf 'mv0'
+

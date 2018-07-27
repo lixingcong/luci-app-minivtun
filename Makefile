@@ -7,9 +7,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=luci-app-udp2raw
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=4
+PKG_NAME:=luci-app-minivtun
+PKG_VERSION:=1.1.0
+PKG_RELEASE:=1
 
 PKG_LICENSE:=GPLv3
 PKG_LICENSE_FILES:=LICENSE
@@ -21,13 +21,13 @@ define Package/$(PKG_NAME)
 	SECTION:=luci
 	CATEGORY:=LuCI
 	SUBMENU:=3. Applications
-	TITLE:=LuCI Support for udp2raw-tunnel
+	TITLE:=LuCI Support for minivtun
 	PKGARCH:=all
-#	DEPENDS:=+udp2raw-tunnel
+	DEPENDS:=+minivtun
 endef
 
 define Package/$(PKG_NAME)/description
-	LuCI Support for udp2raw-tunnel.
+	LuCI Support for minivtun.
 endef
 
 define Build/Prepare
@@ -44,30 +44,30 @@ endef
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh
 if [ -z "$${IPKG_INSTROOT}" ]; then
-	( . /etc/uci-defaults/luci-udp2raw ) && rm -f /etc/uci-defaults/luci-udp2raw
+	( . /etc/uci-defaults/luci-minivtun ) && rm -f /etc/uci-defaults/luci-minivtun
 fi
 exit 0
 endef
 
 define Package/$(PKG_NAME)/conffiles
-	/etc/config/udp2raw
+	/etc/config/minivtun
 endef
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/udp2raw.*.lmo $(1)/usr/lib/lua/luci/i18n/
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/minivtun.*.lmo $(1)/usr/lib/lua/luci/i18n/
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
 	$(INSTALL_DATA) ./files/luci/controller/*.lua $(1)/usr/lib/lua/luci/controller/
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi/udp2raw
-	$(INSTALL_DATA) ./files/luci/model/cbi/udp2raw/*.lua $(1)/usr/lib/lua/luci/model/cbi/udp2raw/
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/udp2raw
-	$(INSTALL_DATA) ./files/luci/view/udp2raw/*.htm $(1)/usr/lib/lua/luci/view/udp2raw/
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi/minivtun
+	$(INSTALL_DATA) ./files/luci/model/cbi/minivtun/*.lua $(1)/usr/lib/lua/luci/model/cbi/minivtun/
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/minivtun
+	$(INSTALL_DATA) ./files/luci/view/minivtun/*.htm $(1)/usr/lib/lua/luci/view/minivtun/
 	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_CONF) ./files/root/etc/config/udp2raw $(1)/etc/config/udp2raw
+	$(INSTALL_CONF) ./files/root/etc/config/minivtun $(1)/etc/config/minivtun
 	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) ./files/root/etc/init.d/udp2raw $(1)/etc/init.d/udp2raw
+	$(INSTALL_BIN) ./files/root/etc/init.d/minivtun $(1)/etc/init.d/minivtun
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
-	$(INSTALL_BIN) ./files/root/etc/uci-defaults/luci-udp2raw $(1)/etc/uci-defaults/luci-udp2raw
+	$(INSTALL_BIN) ./files/root/etc/uci-defaults/luci-minivtun $(1)/etc/uci-defaults/luci-minivtun
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

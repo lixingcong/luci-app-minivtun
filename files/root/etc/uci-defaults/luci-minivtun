@@ -1,0 +1,23 @@
+#!/bin/sh
+
+uci -q batch <<-EOF > /dev/null
+	delete ucitrack.@minivtun[-1]
+	add ucitrack minivtun
+	set ucitrack.@minivtun[-1].init=minivtun
+	commit ucitrack
+EOF
+
+general=$(uci -q get minivtun.@general[-1])
+if [ -z "$general" ]; then
+	uci -q add minivtun general
+fi
+if [ "$general"x != "general"x ]; then
+	uci -q batch <<-EOF > /dev/null
+		rename minivtun.@general[-1]="general"
+		set minivtun.@general[-1].server="nil"
+		commit minivtun
+	EOF
+fi
+
+rm -rf /tmp/luci-indexcache /tmp/luci-modulecache
+exit 0

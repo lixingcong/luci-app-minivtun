@@ -1,0 +1,84 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "minivtun"
+msgstr "迷你vtun"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Servers Manage"
+msgstr "服务器管理"
+
+msgid "Running Status"
+msgstr "运行状态"
+
+msgid "Binary Version"
+msgstr "文件版本"
+
+msgid "Build Time"
+msgstr "编译时间"
+
+msgid "Invalid Binary File."
+msgstr "可执行文件无效。"
+
+msgid "RUNNING"
+msgstr "运行中"
+
+msgid "NOT RUNNING"
+msgstr "未运行"
+
+msgid "General Settings"
+msgstr "基本设置"
+
+msgid "Server"
+msgstr "服务器"
+
+msgid "Disable"
+msgstr "停用"
+
+msgid "Run Daemon as User"
+msgstr "以该用户启动"
+
+msgid "Alias"
+msgstr "别名"
+
+msgid "None"
+msgstr "无"
+
+msgid "Server Address"
+msgstr "服务器地址"
+
+msgid "Edit Server"
+msgstr "编辑服务器"
+
+msgid "Alias(optional)"
+msgstr "别名(可选)"
+
+msgid "Server Port"
+msgstr "服务器端口"
+
+msgid "Local Subnet"
+msgstr "内网地址"
+
+msgid "Local IPv4 Address"
+msgstr "内网IPv4地址"
+
+msgid "Local IPv6 Address"
+msgstr "内网IPv6地址"
+
+msgid "Subnet Family"
+msgstr "内网协议版本"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Interface"
+msgstr "接口"
+
+msgid "Override MTU"
+msgstr "指定MTU"
+
+msgid "Heart-Beats Interval"
+msgstr "心跳包间隔"
+
