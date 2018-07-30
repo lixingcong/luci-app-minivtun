@@ -16,13 +16,13 @@ s.addremove = false
 
 o = s:option(Value, "alias", translate("Alias(optional)"))
 
-o = s:option(Value, "server_addr", translate("Server Address"))                                                                                                                                                                                  
-o.datatype = "host"                                                                                                                                                                                                                         
-o.rmempty = false                                                                                                                                                                                                                           
-                                                                                                                                                                                                                                            
-o = s:option(Value, "server_port", translate("Server Port"))                                                                                                                                                                                       
-o.datatype = "port"                                                                                                                                                                                                                         
-o.rmempty = false                                                                                                                                                                                                                           
+o = s:option(Value, "server_addr", translate("Server Address"))
+o.datatype = "host"
+o.rmempty = false
+
+o = s:option(Value, "server_port", translate("Server Port"))
+o.datatype = "port"
+o.rmempty = false
 
 o = s:option(Value, "password", translate("Password"))
 o.password = true

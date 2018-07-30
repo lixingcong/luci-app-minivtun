@@ -1,10 +1,9 @@
-# luci-app-udp2raw
-适用于 OpenWRT/LEDE 的 [udp2raw-tunnel](https://github.com/wangyu-/udp2raw-tunnel) LuCI 控制界面
+# luci-app-minivtun
 
-更多内容，请看[wiki](https://github.com/sensec/luci-app-udp2raw/wiki)
+A Luci App Interface for [minivtun](https://github.com/rssnsj/minivtun).
 
-![](images/luci-app-udp2raw1.jpg)
+![](/Screenshot.png)
 
-![](images/luci-app-udp2raw2.jpg)
+# Credits
 
-![](images/luci-app-udp2raw3.jpg)
+This project is a fork from [luci-app-udp2raw](https://github.com/sensec/luci-app-udp2raw), which supports multiple upstream servers. Besides, thanks for [luci-app-shadowsocks](https://github.com/shadowsocks/luci-app-shadowsocks) providing dynamical list styles.
