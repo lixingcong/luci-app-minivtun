@@ -82,3 +82,5 @@ msgstr "指定MTU"
 msgid "Heart-Beats Interval"
 msgstr "心跳包间隔"
 
+msgid "Cipher Mode"
+msgstr "加密方式"

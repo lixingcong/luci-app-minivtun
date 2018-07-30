@@ -13,4 +13,5 @@ config servers 'default'
 	option mtu '1400'
 	option keepalive '20'
 	option intf 'mv0'
+	option cipher_mode 'aes-128'
 

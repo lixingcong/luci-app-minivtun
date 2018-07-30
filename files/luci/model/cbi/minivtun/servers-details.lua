@@ -1,6 +1,14 @@
 local m, s, o
 local sid = arg[1]
 
+local cipher_modes = {
+	"aes-128",
+	"aes-256",
+	"des",
+	"desx",
+	"rc4"
+}
+
 m = Map("minivtun", "%s - %s" %{translate("minivtun"), translate("Edit Server")})
 m.redirect = luci.dispatcher.build_url("admin/services/minivtun/servers")
 m.sid = sid
@@ -26,6 +34,11 @@ o.rmempty = false
 
 o = s:option(Value, "password", translate("Password"))
 o.password = true
+o.rmempty = false
+
+o = s:option(ListValue, "cipher_mode", translate("Cipher Mode"))
+for _, v in ipairs(cipher_modes) do o:value(v, v:lower()) end
+o.default = "aes-128"
 o.rmempty = false
 
 o = s:option(ListValue, "local_family", translate("Subnet Family"))
