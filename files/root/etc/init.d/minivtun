@@ -1,8 +1,9 @@
 #!/bin/sh /etc/rc.common
 
-START=89
+START=90
 STOP=15
 USE_PROCD=1
+#PROCD_DEBUG=1
 
 NAME=minivtun
 BINARY=/usr/sbin/minivtun
@@ -65,6 +66,7 @@ start_instance() {
 	procd_append_param command $args
 	[ -n "$daemon_user" ] && procd_set_param user "$daemon_user" && _log "info" "running from ${daemon_user} user"
 	procd_set_param pidfile "$daemon_file"
+	procd_set_param respawn
 	procd_close_instance
 }
 
