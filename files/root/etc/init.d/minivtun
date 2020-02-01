@@ -33,8 +33,7 @@ validate_server_section() {
 		'password:string' \
 		'local_family:or("IPv4", "IPv6"):IPv4' \
 		'mtu:range(296,1500)' \
-		'keepalive:range(10,30)' \
-		'intf:string' \
+		'other_args:string' \
 		'local_ipaddr4:string' \
 		'local_ipaddr6:string' \
 		'cipher_mode:string'
@@ -53,7 +52,7 @@ start_instance() {
 	local daemon_file args
 	daemon_file="/var/run/${NAME}.${server}.pid"
 	
-	args="-r [$server_addr]:$server_port -n $intf -e $password -m $mtu -k $keepalive -t $cipher_mode"
+	args="-r [$server_addr]:$server_port -e $password -m $mtu -t $cipher_mode $other_args"
 	
 	if [ "IPv4" = "$local_family" ]; then
 		args="$args -a $local_ipaddr4"

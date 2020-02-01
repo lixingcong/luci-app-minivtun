@@ -9,11 +9,11 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-minivtun
 PKG_VERSION:=1.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_LICENSE:=GPLv3
 PKG_LICENSE_FILES:=LICENSE
-PKG_MAINTAINER:=Jian Chang <aa65535@live.com>
+PKG_MAINTAINER:=lixingcong <lixingcong@live.com>
 
 include $(INCLUDE_DIR)/package.mk
 

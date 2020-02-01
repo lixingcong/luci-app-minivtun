@@ -63,13 +63,8 @@ o.placeholder = 1400
 o.datatype = "range(296,1500)"
 o.rmempty = false
 
-o = s:option(Value, "keepalive", translate("Heart-Beats Interval"))
-o.placeholder = 20
-o.datatype = "range(10,30)"
-o.rmempty = false
-
-o = s:option(Value, "intf", translate("Interface"))
-o.placeholder = "mv0"
-o.rmempty = false
+o = s:option(Value, "other_args", translate("Other arguments"))
+o.placeholder = ""
+o.rmempty = true
 
 return m

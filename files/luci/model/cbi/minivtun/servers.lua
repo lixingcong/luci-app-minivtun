@@ -48,10 +48,4 @@ function o.cfgvalue(self, section)
 	return local_ipaddr
 end
 
-o = s:option(DummyValue, "intf", translate("Interface"))
-function o.cfgvalue(...)
-	local v = Value.cfgvalue(...)
-	return v and v:lower() or "mv0"
-end
-
 return m

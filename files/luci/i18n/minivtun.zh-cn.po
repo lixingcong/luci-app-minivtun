@@ -73,14 +73,11 @@ msgstr "内网协议版本"
 msgid "Password"
 msgstr "密码"
 
-msgid "Interface"
-msgstr "接口"
+msgid "Other arguments"
+msgstr "其它参数"
 
 msgid "Override MTU"
 msgstr "指定MTU"
-
-msgid "Heart-Beats Interval"
-msgstr "心跳包间隔"
 
 msgid "Cipher Mode"
 msgstr "加密方式"

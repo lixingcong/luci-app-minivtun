@@ -11,7 +11,5 @@ config servers 'default'
 	option local_ipaddr4 '10.7.0.2/24'
 	option local_ipaddr6 'fc00::2/64'
 	option mtu '1400'
-	option keepalive '20'
-	option intf 'mv0'
 	option cipher_mode 'aes-128'
 
